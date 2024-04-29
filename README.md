@@ -55,24 +55,12 @@ onepoint.configureCredentials({
 })
 ```
 
-#
-
-#### GenerateCode
-
-**Returns**: This method is for generate code for auth and generate with code genereated
-
-```javascript
-const GenerateAuthCode = async () => {
-    const codeAccess = await onepoint.generateAuthCode();
-    return codeAccess;
-};
-```
 
 #
 
 #### AuthOneDrive
 
-**Returns**: This method is for generate refreshToken for genereated tokens
+**Returns**: Authenticate with OneDrive using the generated auth code to access user data securely.
 
 ```javascript
 const AuthenticateCodeAccess = async () => {
@@ -85,9 +73,20 @@ const AuthenticateCodeAccess = async () => {
 
 #
 
+#### GenerateCode
+
+**Returns**: This method is used to generate a code for authentication purposes.
+
+```javascript
+const GenerateAuthCode = async () => {
+    const codeAccess = await onepoint.generateAuthCode();
+    return codeAccess;
+};
+```
+
 #### RefreshAccessToken
 
-**Returns**: This generate refreshToken for uploadFile
+**Returns**: This function refreshes the access token for OneDrive refreshing the token to maintain user authentication.
 
 ```javascript
 const RefreshAccessToken = async (req, res) => {
@@ -102,7 +101,7 @@ const RefreshAccessToken = async (req, res) => {
 
 #### UploadFileToOneDrive
 
-**Returns**: This method is for upload file with refreshToken genereated
+**Returns**: This method is for uploading a file using a generated refreshToken.
 
 ```javascript
 const UploadFileToOneDrive = async (req, res) => {
